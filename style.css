@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1580108889024-6c27ec4ebb48?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow:hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+body > * {
+  z-index: 10;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 30rem;
+  width: 30rem;
+  position: relative;
+  transform: scale(1);
+}
+
+.circle {
+  background-color: #010f1c;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.gradient-circle {
+  background: conic-gradient(
+    #55b7a4 0%,
+    #4ca493 33%,
+    #fff 33%,
+    #fff 66%,
+    #336d62 66%,
+    #2a5b52 99%  
+  );
+  height: 32rem;
+  width: 32rem;
+  border-radius: 50%;
+  z-index: -2;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+}
+
+.pointer {
+  background-color: #fff;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  display: block;
+}
+
+.pointer-container {
+  position: absolute;
+  top: -4rem;
+  left: 14rem;
+  width: 2rem;
+  height: 19rem;
+  animation: rotate 12s linear forwards infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+.container.grow {
+  animation: grow 4s linear forwards;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.container.shrink {
+  animation: shrink 4s linear forwards;
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  transform: translate(0%, 50%);
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+p {
+  font-size: 2rem;
+}
